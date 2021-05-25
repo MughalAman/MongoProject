@@ -49,7 +49,7 @@ router.delete('/:playerId', async (req, res) => {
 });
 
 //UPDATE A PLAYER
-router.patch('/playerId', async (req, res) => {
+router.patch('/:playerId', async (req, res) => {
     try {
         const updatedPlayer = await Player.updateOne({ _id: req.params.playerId}, { $set: {name: req.body.name, score: req.body.score}});
         res.json(updatedPlayer);
